@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Flight_Android_App</string>
+    <string name="Button">Flight_Android_App</string>
+    <string name="hist_IP">Flight_Android_App</string>
+    <string name="hist_port">Flight_Android_App</string>
+    <string name="connect">Flight_Android_App</string>
 </resources>
