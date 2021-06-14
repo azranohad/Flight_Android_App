@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Flight_Android_App</string>
+    <string name="hint">Port</string>
+    <string name="hint_IP">IP</string>
 </resources>
