@@ -17,6 +17,8 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
     var ip: EditText? = null
     var port: EditText? = null
+    var port_erase: EditText? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
