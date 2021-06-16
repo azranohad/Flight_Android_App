@@ -1,25 +1,19 @@
 package com.example.flight_android_app
 
-import android.os.Bundle
-import android.widget.SeekBar
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.EditText
+import android.widget.SeekBar
+import android.widget.Toast
 
-
-
- class MainActivity : AppCompatActivity(R.layout.activity_main), SeekBar.OnSeekBarChangeListener {
-
+/* class MainActivity : AppCompatActivity() {
    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
     }
+}*/
 
-     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-         TODO("Not yet implemented")
-     }
- }
-
-/*
 class MainActivity : AppCompatActivity() {
     var ip: EditText? = null
     var port: EditText? = null
@@ -53,4 +47,4 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-}*/
+}
