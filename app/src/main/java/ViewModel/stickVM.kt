@@ -1,4 +1,0 @@
-package ViewModel
-
-class stickVM {
-}
