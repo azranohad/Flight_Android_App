@@ -8,7 +8,7 @@ import android.widget.SeekBar
 import android.widget.Toast
 import android.speech.tts.TextToSpeech
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
+//import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.Observer
 
 /* class MainActivity : AppCompatActivity() {
@@ -27,8 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        ip = findViewById(R.id.ip)
-        port = findViewById(R.id.port)
+
         setContentView(R.layout.activity_main)
 
         val seek = findViewById<SeekBar>(R.id.throttle)
