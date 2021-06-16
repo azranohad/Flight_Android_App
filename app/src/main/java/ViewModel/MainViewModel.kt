@@ -2,12 +2,9 @@ package ViewModel
 
 import android.annotation.SuppressLint
 import android.widget.EditText
-import androidx.databinding.Bindable
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import model.Model
-import java.net.Socket
 
 class MainViewModel(model: Model) : ViewModel() {
     private val _displayedEditTextContent = MutableLiveData<String>()
@@ -22,6 +19,6 @@ class MainViewModel(model: Model) : ViewModel() {
         model.set_ip(editTextContentIP)
         model.set_port(editTextContentPort)
         model.connect()
-    //_displayedEditTextContent.value = 1.toString();
+        //_displayedEditTextContent.value = 1.toString();
     }
 }

@@ -1,6 +1,5 @@
 package model
 
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import java.net.Socket
 
@@ -66,4 +65,3 @@ class Model {
         }
 
 }
-

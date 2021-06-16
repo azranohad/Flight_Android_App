@@ -1,8 +1,9 @@
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.flight_android_app.R
 
 /* class MainActivity : AppCompatActivity() {
@@ -21,8 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        ip = findViewById(R.id.ip)
-        port = findViewById(R.id.port)
         setContentView(R.layout.activity_main)
 
         val seek = findViewById<SeekBar>(R.id.throttle)
