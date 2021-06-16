@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.Toast
+import android.speech.tts.TextToSpeech
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
 
 /* class MainActivity : AppCompatActivity() {
    override fun onCreate(savedInstanceState: Bundle?) {
