@@ -1,11 +1,9 @@
-package com.example.flight_android_app
-
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.Toast
+import com.example.flight_android_app.R
 
 /* class MainActivity : AppCompatActivity() {
    override fun onCreate(savedInstanceState: Bundle?) {

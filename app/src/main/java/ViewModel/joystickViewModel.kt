@@ -1,8 +1,8 @@
-package com.example.flight_android_app.ViewModel
+package ViewModel
 
 import android.widget.SeekBar
 import androidx.lifecycle.ViewModel
-import com.example.flight_android_app.model.Model
+import model.Model
 
 class joystickViewModel(model: Model) : ViewModel(), SeekBar.OnSeekBarChangeListener {
     var m : Model = model
