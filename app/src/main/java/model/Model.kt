@@ -7,9 +7,39 @@ class Model {
         var ip = MutableLiveData<String>()
         var port = MutableLiveData<String>()
         var throttle: Float = 0.0F
+                get() {
+                        return field
+                }
+                set(value) {
+                        field = value
+                        //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
+                }
         var rudder : Float = 0.0F
+                get() {
+                        return field
+                }
+                set(value) {
+                        field = value
+                        //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +rudderSend.toString().toByteArray() + "\r\n".toByteArray())
+                }
+        var angle : Double = 0.0
+                get() {
+                        return field
+                }
+                set(value) {
+                        field = value
+                }
+        var strength : Float = 0.0F
+                get() {
+                        return field
+                }
+                set(value) {
+                        field = value
+                }
         var elevator : Float = 0.0F
         var aileron : Float = 0.0F
+        var throttleS : String = "0000000"
+
         lateinit var client : Socket;
 
         fun send_data_FG() {
@@ -43,19 +73,11 @@ class Model {
                 elevator = new_elevator
                 client.outputStream.write("set /controls/flight/elevator ".toByteArray() +elevator.toString().toByteArray() + "\r\n".toByteArray())
         }
-        fun get_rudder(): Float {
-                return rudder
-        }
-        fun set_rudder(new_rudder: Float) {
-                rudder = new_rudder
-                client.outputStream.write("set /controls/flight/rudder ".toByteArray() +rudder.toString().toByteArray() + "\r\n".toByteArray())
-        }
-        fun get_throttle(): Float {
-                return throttle
+        fun get_throttleS(): String {
+                return throttle.toString()
         }
         fun set_throttle(new_throttle: Float) {
                 throttle = new_throttle
-                client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
         }
         fun set_ip(new_ip: MutableLiveData<String>) {
                 ip = new_ip

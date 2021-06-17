@@ -15,7 +15,7 @@ class MainViewModel(model: Model) : ViewModel() {
     val editTextContentIP = MutableLiveData<String>()
     val editTextContentPort = MutableLiveData<String>()
 
-    fun onChangeconnect(model: Model) {
+    fun onChangeConnect(model: Model) {
         model.set_ip(editTextContentIP)
         model.set_port(editTextContentPort)
         model.connect()

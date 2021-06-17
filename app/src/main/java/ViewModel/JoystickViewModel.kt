@@ -3,14 +3,8 @@ package ViewModel
 import android.widget.SeekBar
 import androidx.lifecycle.ViewModel
 import model.Model
-import android.annotation.SuppressLint
-import android.widget.EditText
-import androidx.databinding.Bindable
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import java.net.Socket
 
-class joystickViewModel(model: Model) : ViewModel(), SeekBar.OnSeekBarChangeListener {
+class JoystickViewModel(model: Model) : ViewModel(), SeekBar.OnSeekBarChangeListener {
     var m : Model = model
     var throttleVM: Float
         get() {
@@ -42,6 +36,7 @@ class joystickViewModel(model: Model) : ViewModel(), SeekBar.OnSeekBarChangeList
         }
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+        m.throttle = progress.toFloat()
     }
 
     override fun onStartTrackingTouch(seekBar: SeekBar?) {
