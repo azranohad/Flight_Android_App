@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModel
 import model.Model
 
 class MainViewModel(model: Model) : ViewModel() {
+    var m : Model = model
+
     //private val _displayedEditTextContent = MutableLiveData<String>()
     @SuppressLint("StaticFieldLeak")
     private var ip: EditText? = null
@@ -24,4 +26,13 @@ class MainViewModel(model: Model) : ViewModel() {
         model.connect()
         //_displayedEditTextContent.value = 1.toString();
     }
+
+    fun setThrottle(throttle : Float) {
+        m.throttle = throttle
+    }
+    fun setRudder(rudder : Float) {
+        m.rudder = rudder
+    }
+
+
 }

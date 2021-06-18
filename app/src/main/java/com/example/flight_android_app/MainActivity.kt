@@ -1,12 +1,12 @@
 package com.example.flight_android_app
+import ViewModel.JoystickViewModel
+import ViewModel.MainViewModel
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import com.example.flight_android_app.databinding.ActivityMainBinding
 import com.jackandphantom.joystickview.JoyStickView
 import model.Model
 
@@ -26,14 +26,18 @@ class MainActivity : AppCompatActivity() {
     var port: EditText? = null
     var port_erase: EditText? = null
     val model = Model()
+    var joystickVM : JoystickViewModel = JoystickViewModel(model)
+    var mainVM : MainViewModel = MainViewModel(model)
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
+
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-        var joyStick : JoyStick = JoyStick(findViewById<JoyStickView>(R.id.joy))
+        var joyStick : JoyStick = JoyStick(findViewById<JoyStickView>(R.id.joy), joystickVM)
 
         val joyStickView = findViewById<JoyStickView>(R.id.joy)
         joyStickView.setOnMoveListener(object : JoyStickView.OnMoveListener {
