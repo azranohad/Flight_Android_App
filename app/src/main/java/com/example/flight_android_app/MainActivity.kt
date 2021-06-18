@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,
                                            progress: Int, fromUser: Boolean) {
-                model.throttle = progress.toFloat()/1000
+                mainVM.setThrottle(progress.toFloat()/1000)
             }
 
             override fun onStartTrackingTouch(seek: SeekBar) {
@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,
                                            progress: Int, fromUser: Boolean) {
-                model.rudder = progress.toFloat()/1000
+                mainVM.setRudder(progress.toFloat()/1000)
             }
 
             override fun onStartTrackingTouch(seek: SeekBar) {
