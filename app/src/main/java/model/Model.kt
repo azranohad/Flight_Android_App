@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import java.net.Socket
 
 class Model {
-        var ip = MutableLiveData<String>()
-        var port = MutableLiveData<String>()
+        var ip = ""
+        var port = ""
         var throttle: Float = 0.0F
                 get() {
                         return field
@@ -79,10 +79,10 @@ class Model {
         fun set_throttle(new_throttle: Float) {
                 throttle = new_throttle
         }
-        fun set_ip(new_ip: MutableLiveData<String>) {
+        fun set_ip(new_ip: String) {
                 ip = new_ip
         }
-        fun set_port(new_port: MutableLiveData<String>) {
+        fun set_port(new_port: String) {
                 port = new_port
         }
 

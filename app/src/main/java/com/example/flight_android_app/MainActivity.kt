@@ -1,8 +1,12 @@
 package com.example.flight_android_app
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.example.flight_android_app.databinding.ActivityMainBinding
 import com.jackandphantom.joystickview.JoyStickView
 import model.Model
 
@@ -39,6 +43,32 @@ class MainActivity : AppCompatActivity() {
                 joyStick.setMove(angle, strength)
             }
         })
+        /*val binding: ActivityMainBinding = DataBindingUtil.setContentView(
+            this, R.layout.activity_main)*/
+/*        val port = findViewById<EditText>(R.id.port)
+        port.setOnEditorActionListener(object : editText {
+
+        }
+
+
+        )*/
+        val port = findViewById<EditText>(R.id.port)
+        val IP = findViewById<EditText>(R.id.IP)
+        val connect = findViewById<Button>(R.id.button)
+        connect.setOnClickListener() {
+            var bb = port.text.toString()
+            if (port == null || port.text.toString() == "") {
+                Toast.makeText(
+                    this,
+                    "Please enter IP and port number",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
+                model.set_ip(IP.text.toString())
+                model.set_port(port.text.toString())
+                model.connect()
+            }
+        }
 
         val throttleSeek = findViewById<SeekBar>(R.id.throttleSeek)
         throttleSeek?.setOnSeekBarChangeListener(object :
