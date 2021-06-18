@@ -1,17 +1,32 @@
 package model
 
 import androidx.lifecycle.MutableLiveData
+import java.io.PrintWriter
 import java.net.Socket
 
 class Model {
         var ip = ""
+                get() {
+                        return field
+                }
+                set(value) {
+                        field = value
+                }
         var port = ""
+                get() {
+                        return field
+                }
+                set(value) {
+                        field = value
+                }
         var throttle: Float = 0.0F
                 get() {
                         return field
                 }
                 set(value) {
                         field = value
+                        send_data_FG("set /controls/flight/throttle "+field.toString()+"\r\n")
+
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
                 }
         var rudder : Float = 0.0F
@@ -20,6 +35,8 @@ class Model {
                 }
                 set(value) {
                         field = value
+                        send_data_FG("set /controls/flight/rudder "+field.toString()+"\r\n")
+
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +rudderSend.toString().toByteArray() + "\r\n".toByteArray())
                 }
         var angle : Double = 0.0
@@ -37,27 +54,60 @@ class Model {
                         field = value
                 }
         var elevator : Float = 0.0F
+                get() {
+                        return field
+                }
+                set(value) {
+                        field = value
+                        send_data_FG("set /controls/flight/elevator "+field.toString()+"\r\n")
+
+                        //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
+                }
         var aileron : Float = 0.0F
+                get() {
+                        return field
+                }
+                set(value) {
+                        field = value
+                        send_data_FG("set /controls/flight/aileron "+field.toString()+"\r\n")
+
+                        //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
+                }
         var throttleS : String = "0000000"
 
-        lateinit var client : Socket;
+        private lateinit var client : Socket;
+        private lateinit var printWrite : PrintWriter
 
-        fun send_data_FG() {
-                while (true) {
-                        client.outputStream.write("set /controls/flight/aileron ".toByteArray() +aileron.toString().toByteArray() + "\r\n".toByteArray())
+        fun send_data_FG(data_to_send : String) {
+       /*                 client.outputStream.write("set /controls/flight/aileron ".toByteArray() +aileron.toString().toByteArray() + "\r\n".toByteArray())
                         client.outputStream.write("set /controls/flight/elevator ".toByteArray() +elevator.toString().toByteArray() + "\r\n".toByteArray())
                         client.outputStream.write("set /controls/flight/rudder ".toByteArray() +rudder.toString().toByteArray() + "\r\n".toByteArray())
-                        client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
-                }
+                        client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())*/
+
+/*                val thread = Thread {
+                        try {
+                                printWrite.print(data_to_send)
+                                printWrite.flush()
+
+                        } catch (e : Exception) {
+
+                        }
+                }*/
         }
         fun connect() {
-                try {
-                        client = Socket(ip.toString(), port.toString().toInt())
-                        //send_data_FG()
-                        //client.close()
+/*                try {
+                        val thread = Thread {
+
+                                client = Socket(ip.toString(), port.toString().toInt())
+                                printWrite = PrintWriter(client.getOutputStream(), true)
+                                //send_data_FG()
+                                //client.close()
+                        }
+                        thread.start();
+                        thread.join()
                 } catch (e: Exception){
                         //Toast.makeText(context, "failed to connect, try again!", Toast.LENGTH_SHORT).show()
-                }
+                }*/
         }
         fun get_aileron(): Float {
                 return aileron

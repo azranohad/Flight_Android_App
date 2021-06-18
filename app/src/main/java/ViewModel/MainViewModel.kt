@@ -33,6 +33,15 @@ class MainViewModel(model: Model) : ViewModel() {
     fun setRudder(rudder : Float) {
         m.rudder = rudder
     }
+    fun setIP(IP : String) {
+        m.ip = IP
+    }
+    fun setPort(port : String) {
+        m.port = port
+    }
+    fun connectModel() {
+        m.connect()
+    }
 
 
 }

@@ -61,16 +61,18 @@ class MainActivity : AppCompatActivity() {
         val connect = findViewById<Button>(R.id.button)
         connect.setOnClickListener() {
             var bb = port.text.toString()
-            if (port == null || port.text.toString() == "") {
+            if (IP.text.toString() == "" || port.text.toString() == "") {
                 Toast.makeText(
                     this,
                     "Please enter IP and port number",
                     Toast.LENGTH_LONG
                 ).show()
             } else {
-                model.set_ip(IP.text.toString())
-                model.set_port(port.text.toString())
-                model.connect()
+                mainVM.setIP(IP.text.toString())
+                mainVM.setPort(port.text.toString())
+                //model.set_ip(IP.text.toString())
+                //model.set_port(port.text.toString())
+                mainVM.connectModel()
             }
         }
 
