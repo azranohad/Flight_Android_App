@@ -78,22 +78,6 @@
             app:layout_constraintVertical_bias="1.0"
             tools:ignore="MissingConstraints" />
 
-        <SeekBar
-            android:id="@+id/throttleSeek"
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="172dp"
-            android:max="1000"
-            android:min="0"
-            android:rotation="270"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/joy"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.754"
-            tools:ignore="MissingConstraints"
-            tools:visibility="visible" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
@@ -126,7 +110,7 @@
             android:layout_height="254dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="76dp"
-            app:innerCircleColor="#FF6544"
+            app:innerCircleColor="#0000FF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.73"
@@ -135,10 +119,29 @@
             app:layout_constraintVertical_bias="1.0"
             app:outerCircleBorderColor="#DDD3FF"
             app:outerCircleBorderWidth="5"
-            app:outerCircleColor="#DDD3FF"
-            app:shadowColor="#000"
+            app:outerCircleColor="#000000"
+            app:shadowColor="#FF0000"
             app:shadowRadius="7"
-            tools:ignore="MissingClass" />
+            tools:ignore="MissingClass" >
+
+        </com.jackandphantom.joystickview.JoyStickView>
+
+
+        <SeekBar
+            android:id="@+id/throttleSeek"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="200dp"
+            android:max="1000"
+            android:min="0"
+            android:rotation="270"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75"
+            tools:ignore="MissingConstraints"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
