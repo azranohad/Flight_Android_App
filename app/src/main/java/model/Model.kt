@@ -1,6 +1,5 @@
 package model
 
-import androidx.lifecycle.MutableLiveData
 import java.io.PrintWriter
 import java.net.Socket
 
@@ -25,7 +24,9 @@ class Model {
                 }
                 set(value) {
                         field = value
-                        send_data_FG("set /controls/flight/throttle "+field.toString()+"\r\n")
+                        send_data_FG("set/controls/flight/throttle "+field.toString()+"\r\n")
+                        println("\nthrottle")
+                        println(throttle)
 
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
                 }
@@ -35,7 +36,9 @@ class Model {
                 }
                 set(value) {
                         field = value
-                        send_data_FG("set /controls/flight/rudder "+field.toString()+"\r\n")
+                        send_data_FG("set/controls/flight/rudder "+field.toString()+"\r\n")
+                        println("\nrudder")
+                        println(rudder)
 
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +rudderSend.toString().toByteArray() + "\r\n".toByteArray())
                 }
@@ -59,7 +62,9 @@ class Model {
                 }
                 set(value) {
                         field = value
-                        send_data_FG("set /controls/flight/elevator "+field.toString()+"\r\n")
+                        send_data_FG("set/controls/flight/elevator "+field.toString()+"\r\n")
+                        println("\nelevator")
+                        println(elevator)
 
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
                 }
@@ -69,7 +74,9 @@ class Model {
                 }
                 set(value) {
                         field = value
-                        send_data_FG("set /controls/flight/aileron "+field.toString()+"\r\n")
+                        send_data_FG("set/controls/flight/aileron "+field.toString()+"\r\n")
+                        println("\naileron")
+                        println(aileron)
 
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
                 }
@@ -84,30 +91,31 @@ class Model {
                         client.outputStream.write("set /controls/flight/rudder ".toByteArray() +rudder.toString().toByteArray() + "\r\n".toByteArray())
                         client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())*/
 
-/*                val thread = Thread {
+                val thread = Thread {
                         try {
                                 printWrite.print(data_to_send)
                                 printWrite.flush()
-
                         } catch (e : Exception) {
 
                         }
-                }*/
+                }
         }
         fun connect() {
-/*                try {
+                try {
                         val thread = Thread {
+                                //client = Socket("84.229.24.202", 5400)
 
-                                client = Socket(ip.toString(), port.toString().toInt())
+                                client = Socket(ip.toString(), port.toInt())
                                 printWrite = PrintWriter(client.getOutputStream(), true)
+                                print("connect to server!!!!!!!!!")
                                 //send_data_FG()
                                 //client.close()
                         }
-                        thread.start();
+                        thread.start()
                         thread.join()
                 } catch (e: Exception){
                         //Toast.makeText(context, "failed to connect, try again!", Toast.LENGTH_SHORT).show()
-                }*/
+                }
         }
         fun get_aileron(): Float {
                 return aileron
