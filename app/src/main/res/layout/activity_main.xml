@@ -139,7 +139,7 @@
             app:outerCircleColor="#000000"
             app:shadowColor="#FF0000"
             app:shadowRadius="7"
-            tools:ignore="MissingClass" >
+            tools:ignore="MissingClass">
 
         </com.jackandphantom.joystickview.JoyStickView>
 
@@ -149,9 +149,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="throttle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.071"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="30dp" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/rudderView"
@@ -159,20 +163,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="rudder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/throttleView"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="30dp" />
+            app:layout_constraintVertical_bias="0.008"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/throttleValueView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="61dp"
             android:layout_marginTop="16dp"
-            android:text="0"
 
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.012"
+            app:layout_constraintStart_toStartOf="@+id/throttleView"
             app:layout_constraintTop_toBottomOf="@+id/button"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="91dp" />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/rudderValueView"
@@ -180,20 +191,28 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toEndOf="@+id/rudderView"
             app:layout_constraintTop_toBottomOf="@+id/throttleValueView"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="91dp" />
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/rudderButton"
             android:layout_width="85dp"
             android:layout_height="35dp"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="44dp"
-            android:text="set 0"
 
+            android:layout_marginBottom="20dp"
+            android:text="set 0"
+            app:layout_constraintBottom_toTopOf="@+id/joy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.038"
+            app:layout_constraintStart_toStartOf="@+id/rudderValueView"
             app:layout_constraintTop_toBottomOf="@+id/button"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="119dp" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
