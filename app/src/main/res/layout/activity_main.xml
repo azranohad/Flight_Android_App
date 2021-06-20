@@ -142,6 +142,49 @@
 
         </com.jackandphantom.joystickview.JoyStickView>
 
+        <TextView
+            android:id="@+id/throttleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="throttle"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="319dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rudderView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rudder"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="356dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/throttleValueView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            tools:layout_editor_absoluteX="91dp"
+            tools:layout_editor_absoluteY="318dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/rudderValueView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            tools:layout_editor_absoluteX="91dp"
+            tools:layout_editor_absoluteY="356dp"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/rudderButton"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:text="set 0"
+            tools:layout_editor_absoluteX="117dp"
+            tools:layout_editor_absoluteY="348dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

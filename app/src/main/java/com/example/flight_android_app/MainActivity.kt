@@ -2,10 +2,7 @@ package com.example.flight_android_app
 import ViewModel.JoystickViewModel
 import ViewModel.MainViewModel
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.SeekBar
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.jackandphantom.joystickview.JoyStickView
 import model.Model
@@ -77,11 +74,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         val throttleSeek = findViewById<SeekBar>(R.id.throttleSeek)
+        val throttleValueView = findViewById<TextView>(R.id.throttleValueView)
         throttleSeek?.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,
                                            progress: Int, fromUser: Boolean) {
                 mainVM.setThrottle(progress.toFloat()/1000)
+                throttleValueView.text = (progress.toFloat()/1000).toString()
             }
 
             override fun onStartTrackingTouch(seek: SeekBar) {
@@ -93,11 +92,13 @@ class MainActivity : AppCompatActivity() {
             }
         })
         val rudderSeek = findViewById<SeekBar>(R.id.rudderSeek)
+        val rudderValueView = findViewById<TextView>(R.id.rudderValueView)
         rudderSeek?.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,
                                            progress: Int, fromUser: Boolean) {
                 mainVM.setRudder(progress.toFloat()/1000)
+                rudderValueView.text = (progress.toFloat()/1000).toString()
             }
 
             override fun onStartTrackingTouch(seek: SeekBar) {
@@ -108,6 +109,11 @@ class MainActivity : AppCompatActivity() {
                 // write custom code for progress is stopped
             }
         })
-
+        val set_0 = findViewById<Button>(R.id.rudderButton)
+        set_0.setOnClickListener() {
+            rudderSeek.progress = 0;
+            mainVM.setRudder(rudderSeek.progress.toFloat()/1000)
+            rudderValueView.text = (rudderSeek.progress.toFloat()/1000).toString()
+        }
     }
 }
