@@ -78,6 +78,22 @@
             app:layout_constraintVertical_bias="1.0"
             tools:ignore="MissingConstraints" />
 
+        <SeekBar
+            android:id="@+id/throttleSeek"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="200dp"
+            android:max="1000"
+            android:min="0"
+            android:rotation="270"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75"
+            tools:ignore="MissingConstraints"
+            tools:visibility="visible" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
@@ -127,21 +143,6 @@
         </com.jackandphantom.joystickview.JoyStickView>
 
 
-        <SeekBar
-            android:id="@+id/throttleSeek"
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="200dp"
-            android:max="1000"
-            android:min="0"
-            android:rotation="270"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.75"
-            tools:ignore="MissingConstraints"
-            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -24,9 +24,9 @@ class Model {
                 }
                 set(value) {
                         field = value
-                        send_data_FG("set/controls/flight/throttle "+field.toString()+"\r\n")
+                        send_data_FG("set /controls/flight/throttle $field\r\n")
                         println("\nthrottle")
-                        println(throttle)
+                        println(field)
 
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
                 }
@@ -36,9 +36,9 @@ class Model {
                 }
                 set(value) {
                         field = value
-                        send_data_FG("set/controls/flight/rudder "+field.toString()+"\r\n")
+                        send_data_FG("set /controls/flight/rudder $field\r\n")
                         println("\nrudder")
-                        println(rudder)
+                        println(field)
 
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +rudderSend.toString().toByteArray() + "\r\n".toByteArray())
                 }
@@ -62,9 +62,9 @@ class Model {
                 }
                 set(value) {
                         field = value
-                        send_data_FG("set/controls/flight/elevator "+field.toString()+"\r\n")
+                        send_data_FG("set /controls/flight/elevator $field\r\n")
                         println("\nelevator")
-                        println(elevator)
+                        println(field)
 
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
                 }
@@ -74,9 +74,9 @@ class Model {
                 }
                 set(value) {
                         field = value
-                        send_data_FG("set/controls/flight/aileron "+field.toString()+"\r\n")
+                        send_data_FG("set /controls/flight/aileron $field\r\n")
                         println("\naileron")
-                        println(aileron)
+                        println(field)
 
                         //client.outputStream.write("set /controls/flight/throttle ".toByteArray() +throttle.toString().toByteArray() + "\r\n".toByteArray())
                 }
@@ -99,23 +99,23 @@ class Model {
 
                         }
                 }
+                thread.start()
+                thread.join()
         }
         fun connect() {
-                try {
-                        val thread = Thread {
-                                //client = Socket("84.229.24.202", 5400)
-
+                val thread = Thread {
+                        try {
                                 client = Socket(ip.toString(), port.toInt())
                                 printWrite = PrintWriter(client.getOutputStream(), true)
-                                print("connect to server!!!!!!!!!")
-                                //send_data_FG()
-                                //client.close()
+                                print("connect to server!!!!!!!!!\n")
+                                send_data_FG("set /controls/flight/throttle 1\r\n")
+
+                        } catch (e: Exception) {
+
                         }
-                        thread.start()
-                        thread.join()
-                } catch (e: Exception){
-                        //Toast.makeText(context, "failed to connect, try again!", Toast.LENGTH_SHORT).show()
                 }
+                thread.start()
+                thread.join()
         }
         fun get_aileron(): Float {
                 return aileron
