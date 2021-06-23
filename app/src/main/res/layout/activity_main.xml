@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -7,34 +9,13 @@
     <variable
         name="viewmodel"
         type="ViewModel.MainViewModel"/>
-    <variable
-        name="joystickVM"
-        type="ViewModel.JoystickViewModel"/>
-    <variable
-        name="model"
-        type="model.Model"/>
 </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@mipmap/background">
 
-
-        <!--        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="476dp"
-            android:layout_marginEnd="8dp"
-            android:text="@{viewmodel.editTextContentIP}"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.742"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:text="Content of EditText ip" />-->
 
         <EditText
             android:id="@+id/IP"
@@ -44,7 +25,7 @@
             android:hint="@string/hist_port"
             android:text="@={viewmodel.editTextContentPort}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/port"
             app:layout_constraintWidth_percent="0.8"
@@ -54,11 +35,11 @@
             android:id="@+id/port"
             android:layout_width="314dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="116dp"
+            android:layout_marginTop="64dp"
             android:hint="@string/hist_IP"
             android:text="@={viewmodel.editTextContentIP}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.8"
@@ -69,8 +50,10 @@
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:max="1000"
-            android:min="-1000"
+            android:max="100"
+            android:min="-100"
+            android:thumbTint="@color/white"
+            android:scrollbarAlwaysDrawHorizontalTrack="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.49"
@@ -83,10 +66,11 @@
             android:id="@+id/throttleSeek"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="200dp"
+            android:layout_marginEnd="212dp"
             android:max="1000"
             android:min="0"
             android:rotation="270"
+            android:thumbTint="@color/white"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,6 +97,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/connect"
+            android:textColor="#0088ff"
+            app:backgroundTint="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -127,17 +113,19 @@
             android:layout_height="254dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="76dp"
-            app:innerCircleColor="#0000FF"
+            app:innerCircleImage="@drawable/ic_baseline_airplanemode_active_24"
+            app:innerCircleColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.73"
+            app:layout_constraintHorizontal_bias="0.84"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="1.0"
-            app:outerCircleBorderColor="#DDD3FF"
+            app:layout_constraintVertical_bias="0.883"
+            app:outerCircleBorderColor="#0088ff"
             app:outerCircleBorderWidth="5"
-            app:outerCircleColor="#000000"
-            app:shadowColor="#FF0000"
+            app:outerCircleColor="#268BEF"
+            app:shadowColor="@color/black"
+            app:innerCircleRadius="0.12"
             app:shadowRadius="7"
             tools:ignore="MissingClass">
 
@@ -147,71 +135,72 @@
             android:id="@+id/throttleView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:rotation="90"
             android:text="throttle"
+
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.071"
+            app:layout_constraintHorizontal_bias="0.045"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/rudderView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
             android:text="rudder"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/rudderSeek"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintHorizontal_bias="0.244"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/throttleView"
-            app:layout_constraintVertical_bias="0.008"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/throttleValueView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="61dp"
-            android:layout_marginTop="16dp"
-
             android:text="0"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.012"
-            app:layout_constraintStart_toStartOf="@+id/throttleView"
-            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintHorizontal_bias="0.02"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.52"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/rudderValueView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="0"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintStart_toEndOf="@+id/rudderView"
-            app:layout_constraintTop_toBottomOf="@+id/throttleValueView"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.944"
             tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/rudderButton"
             android:layout_width="85dp"
             android:layout_height="35dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="44dp"
-
-            android:layout_marginBottom="20dp"
             android:text="set 0"
-            app:layout_constraintBottom_toTopOf="@+id/joy"
+            android:textColor="#0088ff"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/rudderSeek"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.038"
-            app:layout_constraintStart_toStartOf="@+id/rudderValueView"
-            app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/joy"
             tools:ignore="MissingConstraints" />
 
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.flight_android_app">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -9,7 +10,9 @@
         android:roundIcon="@drawable/ic_launcher_background"
         android:supportsRtl="true"
         android:theme="@style/Theme.Flight_Android_App">
-        <activity android:name="com.example.flight_android_app.MainActivity">
+        <activity android:name="com.example.flight_android_app.MainActivity"
+            tools:ignore="ExtraText">
+            android:theme="@style/Theme.Flight_Android_App.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

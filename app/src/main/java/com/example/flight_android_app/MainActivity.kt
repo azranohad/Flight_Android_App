@@ -67,8 +67,6 @@ class MainActivity : AppCompatActivity() {
             } else {
                 mainVM.setIP(IP.text.toString())
                 mainVM.setPort(port.text.toString())
-                //model.set_ip(IP.text.toString())
-                //model.set_port(port.text.toString())
                 mainVM.connectModel()
             }
         }
@@ -97,8 +95,8 @@ class MainActivity : AppCompatActivity() {
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,
                                            progress: Int, fromUser: Boolean) {
-                mainVM.setRudder(progress.toFloat()/1000)
-                rudderValueView.text = (progress.toFloat()/1000).toString()
+                mainVM.setRudder(progress.toFloat()/100)
+                rudderValueView.text = (progress.toFloat()/100).toString()
             }
 
             override fun onStartTrackingTouch(seek: SeekBar) {
