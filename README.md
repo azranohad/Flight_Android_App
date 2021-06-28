@@ -1,4 +1,4 @@
-# **welcome to the anomaly detection server!**
+# **welcome to the flight simulator!**
 
 VERSION:
 1.0.0
