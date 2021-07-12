@@ -31,7 +31,7 @@ A link to the UML of the project:
 
 ## *Technologies we used:*
 
-Kotlin Programming languageץ
+Kotlin Programming language.
 
 Flight-Gear filght simulator.
 
