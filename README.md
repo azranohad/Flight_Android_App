@@ -3,6 +3,8 @@
 VERSION:
 1.0.0
 
+Link to movie-clip: https://drive.google.com/drive/folders/1YHc_wcM3T6mtuOgoljF4-M-oRZdrX8Hk  
+
 ## *Description:*
 In this app you will be able to connect to a Flight-Gear flight simulator and fly a plane remotely.
 
@@ -39,6 +41,8 @@ Required:
 ```
 3. Click "fly" and wait until it's done loading.
 4.use the APK file and launch the app on your phone. file name: FlightRemoteJoystick.apk (in the main folder). Remember to write the IP address of your network and the port     you wrote in step 2.
+![Image of Yaktocat](https://github.com/azranohad/Flight_Android_App/blob/master/app.PNG)
+![Image of Yaktocat](https://github.com/azranohad/Flight_Android_App/blob/master/%E2%80%8F%E2%80%8Fpresentation.PNG)
 
 ## *Contributors:*
 Amit Ilovitch, Ohad Azran
